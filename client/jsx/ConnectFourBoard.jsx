@@ -7,12 +7,12 @@ export default class ConnectFourBoard extends React.Component {
     this.state = {
       currentPlayer: 'yellow',
       activeCol: null,
-      board: [ [0, 0, 0, 'r', 0, 0, 0], 
-               [0, 0, 0, 'r', 0, 0, 0], 
-               [0, 0, 0, 'y', 0, 0, 0], 
-               [0, 0, 0, 'r', 0, 0, 0], 
-               [0, 0, 'y', 'r', 'y', 0, 0], 
-               [0, 0, 'r', 'r', 'y', 'y', 0], ]
+      board: [ [0, 0, 0, 0, 0, 0, 0], 
+               [0, 0, 0, 0, 0, 0, 0], 
+               [0, 0, 0, 0, 0, 0, 0], 
+               [0, 0, 0, 0, 0, 0, 0], 
+               [0, 0, 0, 0, 0, 0, 0], 
+               [0, 0, 0, 0, 0, 0, 0], ]
     };
     this.dropToken = this.dropToken.bind(this);
   }
@@ -23,9 +23,26 @@ export default class ConnectFourBoard extends React.Component {
 
   dropToken() {
     let token = this.state.currentPlayer[0];
-    let i = this.state.board.length - 1;
-    while (i >= 0) {
+    let i = this.state.board.length;
+    while (i > 0 && this.state.board[i - 1][this.state.activeCol]) {
       i -= 1;
+    }
+    if (i) {
+      let newBoard = this.state.board.slice();
+      newBoard[i - 1][this.state.activeCol] = token;
+      let nextPlayer = null;
+      switch (this.state.currentPlayer) {
+      case 'red':
+        nextPlayer = 'yellow';
+        break;
+      case 'yellow':
+        nextPlayer = 'red';
+        break;
+      }
+      this.setState({ 
+        board: newBoard, 
+        currentPlayer: nextPlayer,
+      }); 
     }
   }
 
