@@ -1,7 +1,10 @@
-# react-webpack-starter
+# Connect Four App
+An app that plays the Milton Bradley game Connect Four.
+
+## react-webpack-starter
 Starter code for development in React (with separate stylesheets).
 
-## Instructions for use:
+### Instructions for use:
 
 1. Clone or download repository.
 2. `npm install` to download dev dependencies.
@@ -11,7 +14,7 @@ Starter code for development in React (with separate stylesheets).
       e.g. `import style from '.\path\to\styles.css'`.
 
 
-## Supported file types
+### Supported file types
 
 Files of the following types can be added in any directory:
 * ES6 / ES2015 `.js` and `.jsx` (ES5 also supported!)
