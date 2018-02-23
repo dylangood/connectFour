@@ -3,9 +3,34 @@
 }
 
 #connect-four-board {
-  height: 600px;
+  height: 73vw;
   display: grid;
-  grid-template-columns: 2% repeat(7, 1fr) 2%; 
-  background-color: #888;
+  grid-template-columns: repeat(7, 1fr); 
+  background-color: #06d;
+}
+
+.active {
+  background-color: #08f;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.token {
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+}
+
+.r {
+  background-color: red;
+}
+
+.y {
+  background-color: yellow;
 }
 
