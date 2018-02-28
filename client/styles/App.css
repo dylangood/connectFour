@@ -26,11 +26,14 @@
   border-radius: 50%;
 }
 
-.r {
+.a {
   background-color: #d22;
 }
 
-.y {
+.b {
   background-color: #dd2;
 }
 
+.c {
+  background-color: #2d2;
+}

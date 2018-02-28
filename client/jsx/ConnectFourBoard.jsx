@@ -5,7 +5,7 @@ export default class ConnectFourBoard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPlayer: 'yellow',
+      currentPlayer: 'a',
       activeCol: null,
       board: [ [0, 0, 0, 0, 0, 0, 0], 
                [0, 0, 0, 0, 0, 0, 0], 
@@ -32,11 +32,14 @@ export default class ConnectFourBoard extends React.Component {
       newBoard[i - 1][this.state.activeCol] = token;
       let nextPlayer = null;
       switch (this.state.currentPlayer) {
-      case 'red':
-        nextPlayer = 'yellow';
+      case 'a':
+        nextPlayer = 'b';
         break;
-      case 'yellow':
-        nextPlayer = 'red';
+      case 'b':
+        nextPlayer = 'c';
+        break;
+      case 'c':
+        nextPlayer = 'a';
         break;
       }
       this.setState({ 
